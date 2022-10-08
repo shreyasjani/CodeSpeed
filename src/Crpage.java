@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Crpage implements ActionListener {
     JFrame frame = new JFrame();
+    ImageIcon image = new ImageIcon("CS_logo.jpeg");
     JButton bbutton = new JButton("<--");
     JLabel label = new JLabel("Credits");
     JLabel t = new JLabel("Tavion Fernandes");
@@ -18,8 +19,9 @@ public class Crpage implements ActionListener {
         frame.setResizable(false);
         frame.setLayout(null);
         frame.setSize(800, 800);
-        frame.setBackground(Color.BLACK);
+        frame.getContentPane().setBackground(Color.BLACK);
         frame.setVisible(true);
+        frame.setIconImage(image.getImage());
         //Title
         label.setBounds(300,100,300,100);
         label.setOpaque(true);
@@ -56,6 +58,7 @@ public class Crpage implements ActionListener {
         bbutton.setFocusable(false);
         bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
+        bbutton.setBackground(Color.GREEN);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

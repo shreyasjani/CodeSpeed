@@ -11,7 +11,9 @@ public class LaunchPage implements ActionListener {
     JFrame frame = new JFrame();
     JLabel label = new JLabel("CodeSpeed");
     JButton button = new JButton("Start");
+    JButton opbutton = new JButton("Options");
     JButton crbutton = new JButton("Credits");
+    ImageIcon image = new ImageIcon("CS_logo.jpeg");
     LaunchPage() {
         //Title
         label.setBounds(300,100,300,100);
@@ -25,20 +27,30 @@ public class LaunchPage implements ActionListener {
         button.setFocusable(false);
         button.setBounds(300,400,150,100);
         button.addActionListener(this);
+        button.setBackground(Color.GREEN);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLayout(null);
         frame.setSize(800, 800);
-        frame.setBackground(black);
+        frame.getContentPane().setBackground(Color.BLACK);
         frame.setVisible(true);
+        frame.setIconImage(image.getImage());
         //Credits Page
         crbutton.setVisible(true);
         crbutton.setFocusable(false);
-        crbutton.setBounds(300,600,150,100);
+        crbutton.setBounds(300,500,150,100);
         crbutton.addActionListener(this);
         frame.add(crbutton);
+        crbutton.setBackground(Color.GREEN);
+        //Options Button
+        opbutton.setVisible(true);
+        opbutton.setFocusable(false);
+        opbutton.setBounds(300,600,150,100);
+        opbutton.addActionListener(this);
+        frame.add(opbutton);
+        opbutton.setBackground(Color.GREEN);
 
     }
     @Override
@@ -50,6 +62,10 @@ public class LaunchPage implements ActionListener {
         if(e.getSource()==crbutton) {
             frame.dispose();
             Crpage cr= new Crpage();
+        }
+        if(e.getSource()==opbutton) {
+            frame.dispose();
+            Crpage cr = new Crpage();
         }
     }
 }
