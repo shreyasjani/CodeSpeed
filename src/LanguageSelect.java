@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 public class LanguageSelect implements ActionListener {
     JFrame frame = new JFrame();
+    ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
     JButton bbutton = new JButton("<--");
     JButton cbutton = new JButton("C");
@@ -15,55 +16,60 @@ public class LanguageSelect implements ActionListener {
     JButton jabutton = new JButton("Java");
     JButton ebutton = new JButton("English");
     JLabel label = new JLabel("Language Select");
+    JLabel bglabel = new JLabel(bg);
     LanguageSelect() {
+        //bg img
+        bglabel.setBounds(0,-5,1600,900);
+        frame.add(bglabel);
         //Title
-        label.setBounds(100,100,600,100);
+        label.setBounds(500,100,600,100);
         label.setOpaque(true);
         label.setBackground(Color.GREEN);
         label.setHorizontalAlignment(JLabel.CENTER);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setSize(800, 800);
+        //frame.setResizable(false);
+        frame.setSize(1600, 900);
         frame.setVisible(true);
         frame.setLayout(null);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.getContentPane().setBackground(Color.BLACK);
-        frame.add(label);
+        bglabel.add(label);
         frame.setIconImage(image.getImage());
         //Back
-        frame.add(bbutton);
+        bglabel.add(bbutton);
         bbutton.setVisible(true);
         bbutton.setFocusable(false);
         bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
         //C
-        frame.add(cbutton);
+        bglabel.add(cbutton);
         cbutton.setVisible(true);
         cbutton.setFocusable(false);
-        cbutton.setBounds(100,300,150,130);
+        cbutton.setBounds(200,300,200,130);
         cbutton.addActionListener(this);
         cbutton.setBackground(Color.GREEN);
         //C++
-        frame.add(cpbutton);
+        bglabel.add(cpbutton);
         cpbutton.setVisible(true);
         cpbutton.setFocusable(false);
-        cpbutton.setBounds(100,500,150,130);
+        cpbutton.setBounds(200,500,200,130);
         cpbutton.addActionListener(this);
         cpbutton.setBackground(Color.GREEN);
         //Java
-        frame.add(jabutton);
+        bglabel.add(jabutton);
         jabutton.setVisible(true);
         jabutton.setFocusable(false);
-        jabutton.setBounds(500,300,150,130);
+        jabutton.setBounds(1200,300,200,130);
         jabutton.addActionListener(this);
         jabutton.setBackground(Color.GREEN);
         //English
-        frame.add(ebutton);
+        bglabel.add(ebutton);
         ebutton.setVisible(true);
         ebutton.setFocusable(false);
-        ebutton.setBounds(500,500,150,130);
+        ebutton.setBounds(1200,500,200,130);
         ebutton.addActionListener(this);
         ebutton.setBackground(Color.GREEN);
     }

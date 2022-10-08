@@ -19,44 +19,45 @@ public class LaunchPage implements ActionListener {
 
     LaunchPage() {
         //bg img
-        //bglabel.setBounds(0,-5,800,800);
-        //frame.add(bglabel);
+        bglabel.setBounds(0,0,1600,900);
+        frame.add(bglabel);
         //Title
-        label.setBounds(100,100,600,100);
+        label.setBounds(500,100,600,100);
         label.setOpaque(true);
         label.setFont(new Font(null,Font.PLAIN,32));
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setBackground(Color.GREEN);
-        frame.add(label);
+        bglabel.add(label);
         //Start button
-        frame.add(button);
+        bglabel.add(button);
         button.setVisible(true);
         button.setFocusable(false);
-        button.setBounds(300,400,150,100);
+        button.setBounds(700,250,200,100);
         button.addActionListener(this);
         button.setBackground(Color.GREEN);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        //frame.setResizable(false);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setLayout(null);
-        frame.setSize(800, 800);
+        frame.setSize(1600, 900);
         frame.getContentPane().setBackground(Color.BLACK);
         frame.setVisible(true);
         frame.setIconImage(image.getImage());
         //Credits Page
         crbutton.setVisible(true);
         crbutton.setFocusable(false);
-        crbutton.setBounds(300,500,150,100);
+        crbutton.setBounds(700,400,200,100);
         crbutton.addActionListener(this);
-        frame.add(crbutton);
+        bglabel.add(crbutton);
         crbutton.setBackground(Color.GREEN);
         //Options Button
         opbutton.setVisible(true);
         opbutton.setFocusable(false);
-        opbutton.setBounds(300,600,150,100);
+        opbutton.setBounds(700,550,200,100);
         opbutton.addActionListener(this);
-        frame.add(opbutton);
+        bglabel.add(opbutton);
         opbutton.setBackground(Color.GREEN);
 
     }
