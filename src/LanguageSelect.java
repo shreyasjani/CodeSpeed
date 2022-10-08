@@ -17,9 +17,10 @@ public class LanguageSelect implements ActionListener {
     JLabel label = new JLabel("Language Select");
     LanguageSelect() {
         //Title
-        label.setBounds(300,100,100,100);
+        label.setBounds(100,100,600,100);
         label.setOpaque(true);
         label.setBackground(Color.GREEN);
+        label.setHorizontalAlignment(JLabel.CENTER);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

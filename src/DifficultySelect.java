@@ -14,9 +14,10 @@ public class DifficultySelect implements ActionListener {
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
     DifficultySelect() {
         //Title
-        label.setBounds(300,100,100,100);
+        label.setBounds(100,100,600,100);
         label.setOpaque(true);
         label.setBackground(Color.GREEN);
+        label.setHorizontalAlignment(JLabel.CENTER);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,14 +39,14 @@ public class DifficultySelect implements ActionListener {
         frame.add(ebutton);
         ebutton.setVisible(true);
         ebutton.setFocusable(false);
-        ebutton.setBounds(100,200,150,130);
+        ebutton.setBounds(100,230,150,130);
         ebutton.addActionListener(this);
         ebutton.setBackground(Color.GREEN);
         //Medium
         frame.add(mbutton);
         mbutton.setVisible(true);
         mbutton.setFocusable(false);
-        mbutton.setBounds(300,400,150,130);
+        mbutton.setBounds(300,420,150,130);
         mbutton.addActionListener(this);
         mbutton.setBackground(Color.GREEN);
         //Hard

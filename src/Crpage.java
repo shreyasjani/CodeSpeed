@@ -26,6 +26,7 @@ public class Crpage implements ActionListener {
         label.setBounds(300,100,300,100);
         label.setOpaque(true);
         label.setFont(new Font(null,Font.PLAIN,32));
+        label.setHorizontalAlignment(JLabel.CENTER);
         label.setBackground(Color.GREEN);
         frame.add(label);
         //Tavion
@@ -33,24 +34,28 @@ public class Crpage implements ActionListener {
         t.setOpaque(true);
         t.setFont(new Font(null,Font.PLAIN,18));
         t.setBackground(Color.CYAN);
+        t.setHorizontalAlignment(JLabel.CENTER);
         frame.add(t);
         //Swaraj
         sw.setBounds(300,320,300,100);
         sw.setOpaque(true);
         sw.setFont(new Font(null,Font.PLAIN,18));
         sw.setBackground(Color.CYAN);
+        sw.setHorizontalAlignment(JLabel.CENTER);
         frame.add(sw);
         //Ojas
         o.setBounds(300,430,300,100);
         o.setOpaque(true);
         o.setFont(new Font(null,Font.PLAIN,18));
         o.setBackground(Color.CYAN);
+        o.setHorizontalAlignment(JLabel.CENTER);
         frame.add(o);
         //Shreyas
         sh.setBounds(300,540,300,100);
         sh.setOpaque(true);
         sh.setFont(new Font(null,Font.PLAIN,18));
         sh.setBackground(Color.CYAN);
+        sh.setHorizontalAlignment(JLabel.CENTER);
         frame.add(sh);
         //Back
         frame.add(bbutton);

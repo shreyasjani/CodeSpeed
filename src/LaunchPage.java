@@ -9,16 +9,23 @@ import static java.awt.Color.black;
 
 public class LaunchPage implements ActionListener {
     JFrame frame = new JFrame();
+    ImageIcon image = new ImageIcon("CS_logo.jpeg");
+    ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     JLabel label = new JLabel("CodeSpeed");
+    JLabel bglabel = new JLabel(bg);
     JButton button = new JButton("Start");
     JButton opbutton = new JButton("Options");
     JButton crbutton = new JButton("Credits");
-    ImageIcon image = new ImageIcon("CS_logo.jpeg");
+
     LaunchPage() {
+        //bg img
+        //bglabel.setBounds(0,-5,800,800);
+        //frame.add(bglabel);
         //Title
-        label.setBounds(300,100,300,100);
+        label.setBounds(100,100,600,100);
         label.setOpaque(true);
         label.setFont(new Font(null,Font.PLAIN,32));
+        label.setHorizontalAlignment(JLabel.CENTER);
         label.setBackground(Color.GREEN);
         frame.add(label);
         //Start button
