@@ -22,7 +22,7 @@ public class LanguageSelect implements ActionListener {
         bglabel.setBounds(0,-5,1600,900);
         frame.add(bglabel);
         //Title
-        label.setBounds(500,100,600,100);
+        label.setBounds(500,30,600,100);
         label.setOpaque(true);
         label.setBackground(Color.GREEN);
         label.setHorizontalAlignment(JLabel.CENTER);

@@ -19,7 +19,7 @@ public class DifficultySelect implements ActionListener {
         bglabel.setBounds(0,-5,1600,900);
         frame.add(bglabel);
         //Title
-        label.setBounds(500,100,600,100);
+        label.setBounds(500,30,600,100);
         label.setOpaque(true);
         label.setBackground(Color.GREEN);
         label.setHorizontalAlignment(JLabel.CENTER);
@@ -72,15 +72,15 @@ public class DifficultySelect implements ActionListener {
         }
         if (e.getSource() == ebutton) {
             frame.dispose();
-            LaunchPage l= new LaunchPage();
+            MainPage m= new MainPage();
         }
         if (e.getSource() == mbutton) {
             frame.dispose();
-            LaunchPage l= new LaunchPage();
+            MainPage m= new MainPage();
         }
         if (e.getSource() == hbutton) {
             frame.dispose();
-            LaunchPage l= new LaunchPage();
+            MainPage m= new MainPage();
         }
     }
 

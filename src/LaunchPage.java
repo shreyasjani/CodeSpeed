@@ -22,7 +22,7 @@ public class LaunchPage implements ActionListener {
         bglabel.setBounds(0,0,1600,900);
         frame.add(bglabel);
         //Title
-        label.setBounds(500,100,600,100);
+        label.setBounds(500,30,600,100);
         label.setOpaque(true);
         label.setFont(new Font(null,Font.PLAIN,32));
         label.setHorizontalAlignment(JLabel.CENTER);

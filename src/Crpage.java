@@ -29,7 +29,7 @@ public class Crpage implements ActionListener {
         frame.setVisible(true);
         frame.setIconImage(image.getImage());
         //Title
-        label.setBounds(500,100,600,100);
+        label.setBounds(500,30,600,100);
         label.setOpaque(true);
         label.setFont(new Font(null,Font.PLAIN,32));
         label.setHorizontalAlignment(JLabel.CENTER);
