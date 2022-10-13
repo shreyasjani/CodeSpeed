@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class MainPage implements ActionListener {
     JFrame frame = new JFrame();
@@ -20,6 +23,7 @@ public class MainPage implements ActionListener {
     JLabel fn = new JLabel(finish);
     JTextField textField2 = new JTextField();
     JTextArea textArea = new JTextArea();
+    JTextArea textArea2 = new JTextArea();
     JButton bbutton = new JButton("<--");
     int elapsedtime=0;
     int seconds=0;
@@ -104,15 +108,44 @@ public class MainPage implements ActionListener {
         textField2.setVisible(true);
         textField2.setBounds(50,80,650,650);
         textField2.setAlignmentY(0.0f);
+        //Textfile
+        bglabel.add(textArea2);
+        textArea2.setVisible(true);
+        textArea2.setBounds(50,80,650,650);
+        textArea2.setAlignmentY(0.0f);
+        try{
+
+            BufferedReader reader = new BufferedReader(new FileReader("code.txt"));
+            StringBuilder stringBuilder = new StringBuilder();
+            char[] buffer = new char[10];
+            while (reader.read(buffer) != -1) {
+                stringBuilder.append(new String(buffer));
+                buffer = new char[10];
+            }
+            reader.close();
+
+            String content = stringBuilder.toString();
+            textArea2.setText(content);
+
+        }
+
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+        }
+        textArea2.setFocusable(false);
+        textArea2.setFont(new Font("Verdana",Font.PLAIN,15));
+        textArea2.setBackground(new Color(200,200,200));
         //LayeredPane
         layer.setBounds(0,0,1600,900);
         layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
+        layer.add(textArea2, JLayeredPane.DRAG_LAYER);
         layer.add(st, JLayeredPane.DRAG_LAYER);
         layer.add(fn, JLayeredPane.DRAG_LAYER);
         layer.add(bb, JLayeredPane.DRAG_LAYER);
         //layer.add(crl, JLayeredPane.DRAG_LAYER);
         //layer.add(cds, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
+
     }
     @Override
     public void actionPerformed(ActionEvent e){
