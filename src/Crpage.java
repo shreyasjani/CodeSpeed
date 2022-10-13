@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Crpage implements ActionListener {
     JFrame frame = new JFrame();
+    JLayeredPane layer = new JLayeredPane();
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     JLabel bglabel = new JLabel(bg);
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
@@ -14,6 +15,8 @@ public class Crpage implements ActionListener {
     JLabel sw = new JLabel("Swaraj Dusane");
     JLabel o = new JLabel("Ojas Golatkar");
     JLabel sh = new JLabel("Shreyas Jani");
+    ImageIcon credits = new ImageIcon("credit heading.png");
+    JLabel crh = new JLabel(credits);
     Crpage(){
         //bg img
         bglabel.setBounds(0,-5,1600,900);
@@ -29,12 +32,14 @@ public class Crpage implements ActionListener {
         frame.setVisible(true);
         frame.setIconImage(image.getImage());
         //Title
-        label.setBounds(500,30,600,100);
-        label.setOpaque(true);
-        label.setFont(new Font(null,Font.PLAIN,32));
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setBackground(Color.GREEN);
-        bglabel.add(label);
+        //label.setBounds(500,30,600,100);
+        //label.setOpaque(true);
+        //label.setFont(new Font(null,Font.PLAIN,32));
+        //label.setHorizontalAlignment(JLabel.CENTER);
+        //label.setBackground(Color.GREEN);
+        //bglabel.add(label);
+        crh.setOpaque(true);
+        crh.setBounds(500,30,600,100);
         //Tavion
         t.setBounds(650,240,300,100);
         t.setOpaque(true);
@@ -70,6 +75,11 @@ public class Crpage implements ActionListener {
         bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
+        //LayeredPane
+        layer.setBounds(0,0,1600,900);
+        layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
+        layer.add(crh, JLayeredPane.DRAG_LAYER);
+        frame.add(layer);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -9,25 +9,37 @@ import static java.awt.Color.black;
 
 public class LaunchPage implements ActionListener {
     JFrame frame = new JFrame();
+    JLayeredPane layer = new JLayeredPane();
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
+    ImageIcon start = new ImageIcon("start.png");
+    ImageIcon options = new ImageIcon("options.png");
+    ImageIcon credits = new ImageIcon("credits.png");
+    ImageIcon cdstitle = new ImageIcon("code speed.png");
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     JLabel label = new JLabel("CodeSpeed");
     JLabel bglabel = new JLabel(bg);
     JButton button = new JButton("Start");
     JButton opbutton = new JButton("Options");
     JButton crbutton = new JButton("Credits");
+    JLabel st = new JLabel(start);
+    JLabel opt = new JLabel(options);
+    JLabel crl = new JLabel(credits);
+    JLabel cds = new JLabel(cdstitle);
+    JPanel panel = new JPanel();
 
     LaunchPage() {
         //bg img
         bglabel.setBounds(0,0,1600,900);
         frame.add(bglabel);
         //Title
-        label.setBounds(500,30,600,100);
-        label.setOpaque(true);
-        label.setFont(new Font(null,Font.PLAIN,32));
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setBackground(Color.GREEN);
-        bglabel.add(label);
+        //label.setBounds(500,30,600,100);
+        //label.setOpaque(true);
+        //label.setFont(new Font(null,Font.PLAIN,32));
+        //label.setHorizontalAlignment(JLabel.CENTER);
+        //label.setBackground(Color.GREEN);
+        //bglabel.add(label);
+        cds.setOpaque(true);
+        cds.setBounds(500,30,600,100);
         //Start button
         bglabel.add(button);
         button.setVisible(true);
@@ -35,6 +47,9 @@ public class LaunchPage implements ActionListener {
         button.setBounds(700,250,200,100);
         button.addActionListener(this);
         button.setBackground(Color.GREEN);
+        st.setBounds(700,250,200,100);
+        st.setOpaque(true);
+        bglabel.add(st);
         //Frame
         frame.setTitle("CodeSpeed");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,6 +67,8 @@ public class LaunchPage implements ActionListener {
         crbutton.addActionListener(this);
         bglabel.add(crbutton);
         crbutton.setBackground(Color.GREEN);
+        crl.setBounds(700,400,200,100);
+        crl.setOpaque(true);
         //Options Button
         opbutton.setVisible(true);
         opbutton.setFocusable(false);
@@ -59,7 +76,16 @@ public class LaunchPage implements ActionListener {
         opbutton.addActionListener(this);
         bglabel.add(opbutton);
         opbutton.setBackground(Color.GREEN);
-
+        opt.setBounds(700,550,200,100);
+        opt.setOpaque(true);
+        //Layered Pane
+        layer.setBounds(0,0,1600,900);
+        layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
+        layer.add(st, JLayeredPane.DRAG_LAYER);
+        layer.add(opt, JLayeredPane.DRAG_LAYER);
+        layer.add(crl, JLayeredPane.DRAG_LAYER);
+        layer.add(cds, JLayeredPane.DRAG_LAYER);
+        frame.add(layer);
     }
     @Override
     public void actionPerformed(ActionEvent e){
