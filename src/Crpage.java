@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 public class Crpage implements ActionListener {
     JFrame frame = new JFrame();
     JLayeredPane layer = new JLayeredPane();
+    ImageIcon back = new ImageIcon("back.png");
+    JLabel bb = new JLabel(back);
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     JLabel bglabel = new JLabel(bg);
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
@@ -72,13 +74,16 @@ public class Crpage implements ActionListener {
         bglabel.add(bbutton);
         bbutton.setVisible(true);
         bbutton.setFocusable(false);
-        bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
+        bbutton.setBounds(10,15,50,30);
+        bb.setBounds(10,10,50,30);
+        bb.setOpaque(true);
         //LayeredPane
         layer.setBounds(0,0,1600,900);
         layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
         layer.add(crh, JLayeredPane.DRAG_LAYER);
+        layer.add(bb, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
     }
     @Override

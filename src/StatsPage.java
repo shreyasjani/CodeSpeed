@@ -5,9 +5,16 @@ import java.awt.event.ActionListener;
 
 public class StatsPage implements ActionListener {
     JFrame frame = new JFrame();
+    JLayeredPane layer = new JLayeredPane();
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
+    ImageIcon play = new ImageIcon("play.png");
+    ImageIcon mainm = new ImageIcon("main menu.png");
+    ImageIcon progress = new ImageIcon("progress.png");
     JLabel bglabel = new JLabel(bg);
+    JLabel pr = new JLabel(progress);
+    JLabel pa = new JLabel(play);
+    JLabel mm = new JLabel(mainm);
     JButton button = new JButton("Main Menu");
     JButton bbutton = new JButton("Play Again");
     JLabel bs = new JLabel("Best Score : ");
@@ -37,6 +44,8 @@ public class StatsPage implements ActionListener {
         button.setBounds(1300,680,200,100);
         button.addActionListener(this);
         button.setBackground(Color.GREEN);
+        mm.setBounds(1300,680,200,100);
+        mm.setOpaque(true);
         //Back
         bglabel.add(bbutton);
         bbutton.setVisible(true);
@@ -44,13 +53,15 @@ public class StatsPage implements ActionListener {
         bbutton.setBounds(100,680,200,100);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
+        pa.setOpaque(true);
+        pa.setBounds(100,680,200,100);
         //Title
-        label.setBounds(500,30,600,100);
-        label.setOpaque(true);
-        label.setFont(new Font(null,Font.PLAIN,32));
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setBackground(Color.GREEN);
-        bglabel.add(label);
+        pr.setBounds(500,30,600,100);
+        pr.setOpaque(true);
+        //label.setFont(new Font(null,Font.PLAIN,32));
+        //label.setHorizontalAlignment(JLabel.CENTER);
+        //label.setBackground(Color.GREEN);
+        //bglabel.add(label);
         //Best Score
         bs.setBounds(100,140,300,100);
         bs.setOpaque(true);
@@ -86,6 +97,14 @@ public class StatsPage implements ActionListener {
         gr.setBackground(Color.CYAN);
         gr.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(gr);
+        //LayeredPane
+        layer.setBounds(0,0,1600,900);
+        layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
+        layer.add(mm, JLayeredPane.DRAG_LAYER);
+        layer.add(pa, JLayeredPane.DRAG_LAYER);
+        layer.add(pr, JLayeredPane.DRAG_LAYER);
+        //layer.add(ds, JLayeredPane.DRAG_LAYER);
+        frame.add(layer);
     }
     @Override
     public void actionPerformed(ActionEvent e){

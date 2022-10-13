@@ -10,6 +10,8 @@ public class LanguageSelect implements ActionListener {
     JFrame frame = new JFrame();
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
+    ImageIcon back = new ImageIcon("back.png");
+    JLabel bb = new JLabel(back);
     ImageIcon cbut = new ImageIcon("c.png");
     ImageIcon cppbut = new ImageIcon("Cpp.png");
     ImageIcon javbut = new ImageIcon("java.png");
@@ -52,9 +54,12 @@ public class LanguageSelect implements ActionListener {
         bglabel.add(bbutton);
         bbutton.setVisible(true);
         bbutton.setFocusable(false);
-        bbutton.setBounds(10,10,50,30);
+        //bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
+        bbutton.setBounds(10,10,50,30);
+        bb.setBounds(10,10,50,30);
+        bb.setOpaque(true);
         //C
         bglabel.add(cbutton);
         cbutton.setVisible(true);
@@ -99,6 +104,7 @@ public class LanguageSelect implements ActionListener {
         layer.add(jab, JLayeredPane.DRAG_LAYER);
         layer.add(engb, JLayeredPane.DRAG_LAYER);
         layer.add(lsl, JLayeredPane.DRAG_LAYER);
+        layer.add(bb, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
     }
     @Override

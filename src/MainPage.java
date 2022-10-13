@@ -5,14 +5,19 @@ import java.awt.event.ActionListener;
 
 public class MainPage implements ActionListener {
     JFrame frame = new JFrame();
+    JLayeredPane layer = new JLayeredPane();
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
+    ImageIcon back = new ImageIcon("back.png");
+    JLabel bb = new JLabel(back);
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     JLabel bglabel = new JLabel(bg);
     JButton stbutton = new JButton("Start");
     JLabel timelabel = new JLabel();
     JButton button = new JButton("Finish");
     ImageIcon start = new ImageIcon("start.png");
+    ImageIcon finish = new ImageIcon("finish.png");
     JLabel st = new JLabel(start);
+    JLabel fn = new JLabel(finish);
     JTextField textField2 = new JTextField();
     JTextArea textArea = new JTextArea();
     JButton bbutton = new JButton("<--");
@@ -58,13 +63,18 @@ public class MainPage implements ActionListener {
         button.setBounds(1300,650,200,100);
         button.addActionListener(this);
         button.setBackground(Color.GREEN);
+        fn.setBounds(1300,650,200,100);
+        fn.setOpaque(true);
         //Back
         bglabel.add(bbutton);
         bbutton.setVisible(true);
         bbutton.setFocusable(false);
-        bbutton.setBounds(10,10,50,30);
+        //bbutton.setBounds(10,10,50,30);
         bbutton.addActionListener(this);
         bbutton.setBackground(Color.GREEN);
+        bbutton.setBounds(10,10,50,30);
+        bb.setBounds(10,10,50,30);
+        bb.setOpaque(true);
         //Timer
         timelabel.setOpaque(true);
         timelabel.setHorizontalAlignment(JTextField.CENTER);
@@ -76,6 +86,8 @@ public class MainPage implements ActionListener {
         stbutton.setBounds(1000,650,200,100);
         stbutton.setFocusable(false);
         stbutton.addActionListener(this);
+        st.setOpaque(true);
+        st.setBounds(1000,650,200,100);
         bglabel.add(stbutton);
         //TextArea
         bglabel.add(textArea);
@@ -92,6 +104,15 @@ public class MainPage implements ActionListener {
         textField2.setVisible(true);
         textField2.setBounds(50,80,650,650);
         textField2.setAlignmentY(0.0f);
+        //LayeredPane
+        layer.setBounds(0,0,1600,900);
+        layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
+        layer.add(st, JLayeredPane.DRAG_LAYER);
+        layer.add(fn, JLayeredPane.DRAG_LAYER);
+        layer.add(bb, JLayeredPane.DRAG_LAYER);
+        //layer.add(crl, JLayeredPane.DRAG_LAYER);
+        //layer.add(cds, JLayeredPane.DRAG_LAYER);
+        frame.add(layer);
     }
     @Override
     public void actionPerformed(ActionEvent e){
