@@ -23,8 +23,14 @@ public class MainPage implements ActionListener {
     JLabel fn = new JLabel(finish);
     JTextField textField2 = new JTextField();
     JTextArea textArea = new JTextArea();
+
     JTextArea textArea2 = new JTextArea();
     JButton bbutton = new JButton("<--");
+    JScrollPane sp = new JScrollPane(textArea);
+
+
+
+    //Timer code
     int elapsedtime=0;
     int seconds=0;
     int minutes=0;
@@ -94,7 +100,7 @@ public class MainPage implements ActionListener {
         st.setBounds(1000,650,200,100);
         bglabel.add(stbutton);
         //TextArea
-        bglabel.add(textArea);
+        //bglabel.add(textArea);
         textArea.setBounds(790,120,700,500);
         textArea.setAlignmentY(0.0f);
         textArea.setVisible(true);
@@ -103,11 +109,17 @@ public class MainPage implements ActionListener {
         textArea.setForeground(Color.white);
         textArea.setCaretColor(Color.white);
         textArea.setText("Hello CodeSpeeder!!\n\nMaster your Typing skills here...\n\n");
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        bglabel.add(sp);
+        sp.setBounds(790,120,700,500);
+        sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        //textArea.setText(textArea.getText()+ string);
         //TextField
-        bglabel.add(textField2);
-        textField2.setVisible(true);
-        textField2.setBounds(50,80,650,650);
-        textField2.setAlignmentY(0.0f);
+//        bglabel.add(textField2);
+//        textField2.setVisible(true);
+//        textField2.setBounds(50,80,650,650);
+//        textField2.setAlignmentY(0.0f);
         //Textfile
         bglabel.add(textArea2);
         textArea2.setVisible(true);
@@ -139,6 +151,8 @@ public class MainPage implements ActionListener {
         layer.setBounds(0,0,1600,900);
         layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
         layer.add(textArea2, JLayeredPane.DRAG_LAYER);
+        //layer.add(textArea, JLayeredPane.DRAG_LAYER);
+        layer.add(sp, JLayeredPane.DRAG_LAYER);
         layer.add(st, JLayeredPane.DRAG_LAYER);
         layer.add(fn, JLayeredPane.DRAG_LAYER);
         layer.add(bb, JLayeredPane.DRAG_LAYER);
