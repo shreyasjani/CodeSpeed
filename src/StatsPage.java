@@ -9,6 +9,10 @@ public class StatsPage implements ActionListener {
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     ImageIcon play = new ImageIcon("play.png");
+    ImageIcon bes = new ImageIcon("bestscore.png");
+    ImageIcon bet = new ImageIcon("besttime.png");
+    ImageIcon cusc = new ImageIcon("currenttscore.png");
+    ImageIcon cut = new ImageIcon("currenttime.png");
     ImageIcon mainm = new ImageIcon("main menu.png");
     ImageIcon progress = new ImageIcon("progress.png");
     JLabel bglabel = new JLabel(bg);
@@ -17,12 +21,13 @@ public class StatsPage implements ActionListener {
     JLabel mm = new JLabel(mainm);
     JButton button = new JButton("Main Menu");
     JButton bbutton = new JButton("Play Again");
-    JLabel bs = new JLabel("Best Score : ");
-    JLabel cs = new JLabel("Current Score : ");
-    JLabel bt = new JLabel("Best Time : ");
-    JLabel ct = new JLabel("Current Time : ");
+    JLabel bs = new JLabel(bes);
+    JLabel cs = new JLabel(cusc);
+    JLabel bt = new JLabel(bet);
+    JLabel ct = new JLabel(cut);
     JLabel label = new JLabel("Progress");
     JLabel gr = new JLabel("Graph");
+
     StatsPage(){
         //bg img
         bglabel.setBounds(0,0,1600,900);
@@ -63,40 +68,40 @@ public class StatsPage implements ActionListener {
         //label.setBackground(Color.GREEN);
         //bglabel.add(label);
         //Best Score
-        bs.setBounds(100,140,300,100);
+        bs.setBounds(400,240,300,100);
         bs.setOpaque(true);
-        bs.setFont(new Font(null,Font.PLAIN,18));
-        bs.setBackground(Color.CYAN);
-        bs.setHorizontalAlignment(JLabel.CENTER);
+//        bs.setFont(new Font(null,Font.PLAIN,18));
+//        bs.setBackground(Color.CYAN);
+//        bs.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(bs);
         //Current Score
-        cs.setBounds(100,260,300,100);
+        cs.setBounds(400,360,300,100);
         cs.setOpaque(true);
-        cs.setFont(new Font(null,Font.PLAIN,18));
-        cs.setBackground(Color.CYAN);
-        cs.setHorizontalAlignment(JLabel.CENTER);
+//        cs.setFont(new Font(null,Font.PLAIN,18));
+//        cs.setBackground(Color.CYAN);
+//        cs.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(cs);
         //Best Time
-        bt.setBounds(100,380,300,100);
+        bt.setBounds(400,480,300,100);
         bt.setOpaque(true);
-        bt.setFont(new Font(null,Font.PLAIN,18));
-        bt.setBackground(Color.CYAN);
-        bt.setHorizontalAlignment(JLabel.CENTER);
+//        bt.setFont(new Font(null,Font.PLAIN,18));
+//        bt.setBackground(Color.CYAN);
+//        bt.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(bt);
         //Current Time
-        ct.setBounds(100,500,300,100);
+        ct.setBounds(400,600,300,100);
         ct.setOpaque(true);
-        ct.setFont(new Font(null,Font.PLAIN,18));
-        ct.setBackground(Color.CYAN);
-        ct.setHorizontalAlignment(JLabel.CENTER);
+//        ct.setFont(new Font(null,Font.PLAIN,18));
+//        ct.setBackground(Color.CYAN);
+//        ct.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(ct);
         //Graph Label
-        gr.setBounds(800,140,700,500);
-        gr.setOpaque(true);
-        gr.setFont(new Font(null,Font.PLAIN,18));
-        gr.setBackground(Color.CYAN);
-        gr.setHorizontalAlignment(JLabel.CENTER);
-        bglabel.add(gr);
+//        gr.setBounds(800,140,700,500);
+//        gr.setOpaque(true);
+//        gr.setFont(new Font(null,Font.PLAIN,18));
+//        gr.setBackground(Color.CYAN);
+//        gr.setHorizontalAlignment(JLabel.CENTER);
+//        bglabel.add(gr);
         //LayeredPane
         layer.setBounds(0,0,1600,900);
         layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
@@ -105,6 +110,7 @@ public class StatsPage implements ActionListener {
         layer.add(pr, JLayeredPane.DRAG_LAYER);
         //layer.add(ds, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
+        // Graph
     }
     @Override
     public void actionPerformed(ActionEvent e){

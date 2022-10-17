@@ -99,7 +99,7 @@ public class LaunchPage implements ActionListener {
         }
         if(e.getSource()==opbutton) {
             frame.dispose();
-            Crpage cr = new Crpage();
+            //Crpage cr = new Crpage();
         }
     }
 }

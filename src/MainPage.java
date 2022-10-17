@@ -109,11 +109,12 @@ public class MainPage implements ActionListener {
         textArea.setForeground(Color.white);
         textArea.setCaretColor(Color.white);
         textArea.setText("Hello CodeSpeeder!!\n\nMaster your Typing skills here...\n\n");
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
+        //textArea.setLineWrap(true);
+        //textArea.setWrapStyleWord(true);
         bglabel.add(sp);
         sp.setBounds(790,120,700,500);
         sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        sp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         //textArea.setText(textArea.getText()+ string);
         //TextField
 //        bglabel.add(textField2);

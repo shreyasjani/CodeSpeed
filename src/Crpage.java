@@ -5,6 +5,10 @@ import java.awt.event.ActionListener;
 
 public class Crpage implements ActionListener {
     JFrame frame = new JFrame();
+    ImageIcon tav = new ImageIcon("tavion.png");
+    ImageIcon swa = new ImageIcon("swaraj.png");
+    ImageIcon shr = new ImageIcon("shreyas.png");
+    ImageIcon oja = new ImageIcon("ojas.png");
     JLayeredPane layer = new JLayeredPane();
     ImageIcon back = new ImageIcon("back.png");
     JLabel bb = new JLabel(back);
@@ -13,10 +17,10 @@ public class Crpage implements ActionListener {
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
     JButton bbutton = new JButton("<--");
     JLabel label = new JLabel("Credits");
-    JLabel t = new JLabel("Tavion Fernandes");
-    JLabel sw = new JLabel("Swaraj Dusane");
-    JLabel o = new JLabel("Ojas Golatkar");
-    JLabel sh = new JLabel("Shreyas Jani");
+    JLabel t = new JLabel(tav);
+    JLabel sw = new JLabel(swa);
+    JLabel o = new JLabel(oja);
+    JLabel sh = new JLabel(shr);
     ImageIcon credits = new ImageIcon("credit heading.png");
     JLabel crh = new JLabel(credits);
     Crpage(){
@@ -45,30 +49,30 @@ public class Crpage implements ActionListener {
         //Tavion
         t.setBounds(650,240,300,100);
         t.setOpaque(true);
-        t.setFont(new Font(null,Font.PLAIN,18));
-        t.setBackground(Color.CYAN);
-        t.setHorizontalAlignment(JLabel.CENTER);
+//        t.setFont(new Font(null,Font.PLAIN,18));
+//        t.setBackground(Color.CYAN);
+//        t.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(t);
         //Swaraj
         sw.setBounds(650,360,300,100);
         sw.setOpaque(true);
-        sw.setFont(new Font(null,Font.PLAIN,18));
-        sw.setBackground(Color.CYAN);
-        sw.setHorizontalAlignment(JLabel.CENTER);
+//        sw.setFont(new Font(null,Font.PLAIN,18));
+//        sw.setBackground(Color.CYAN);
+//        sw.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(sw);
         //Ojas
         o.setBounds(650,480,300,100);
         o.setOpaque(true);
-        o.setFont(new Font(null,Font.PLAIN,18));
-        o.setBackground(Color.CYAN);
-        o.setHorizontalAlignment(JLabel.CENTER);
+//        o.setFont(new Font(null,Font.PLAIN,18));
+//        o.setBackground(Color.CYAN);
+//        o.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(o);
         //Shreyas
         sh.setBounds(650,600,300,100);
         sh.setOpaque(true);
-        sh.setFont(new Font(null,Font.PLAIN,18));
-        sh.setBackground(Color.CYAN);
-        sh.setHorizontalAlignment(JLabel.CENTER);
+//        sh.setFont(new Font(null,Font.PLAIN,18));
+//        sh.setBackground(Color.CYAN);
+//        sh.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(sh);
         //Back
         bglabel.add(bbutton);
