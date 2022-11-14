@@ -2,14 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
+import java.io.IOException;
 
-public class MainPage implements ActionListener {
+
+public class MainPagecpp implements ActionListener {
 
 
     JFrame frame = new JFrame();
@@ -64,7 +65,7 @@ public class MainPage implements ActionListener {
             timelabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         }
     });
-    MainPage(){
+    MainPagecpp(){
 
         //frame.dispose(LanguageSelect);
         //bg img
@@ -153,43 +154,39 @@ public class MainPage implements ActionListener {
         //random integer generation
         int x;
 
+
         try{
             String a = "";
 
 
-                //C codes
+                //cp codes
                 x =random.nextInt(5);
                 switch(x)
                 {
                     case 0:{
-                        a="code.txt";
+                        a="addmat.txt";
                         break;}
 
                     case 1:{
-                        a="fib1.txt";
+                        a="even.txt";
                         break;
                     }
 
                     case 2:{
-                        a="fact2.txt";
+                        a="gcd.txt";
                         break;
                     }
 
                     case 3:{
-                        a="matrix multi.txt";
+                        a="large.txt";
                         break;
                     }
 
                     case 4:{
-                        a="palindrome.txt";
+                        a="printno.txt";
                         break;
                     }
-
-
                 }
-
-
-
 
 
 
@@ -271,7 +268,7 @@ public class MainPage implements ActionListener {
         }
         if (e.getSource() == bbutton) {
             frame.dispose();
-            DifficultySelect d= new DifficultySelect();
+            DifficultySelect2 d= new DifficultySelect2();
         }
         if(e.getSource()==stbutton) {
             timer.start();

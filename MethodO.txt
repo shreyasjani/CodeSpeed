@@ -1,0 +1,27 @@
+public class MethodOv
+{
+int i;
+public static String Work= &quot;employee&quot;;
+
+static void Hi()
+{
+System.out.println(&quot;Hello&quot;);
+}
+
+int Sum1(int a, int b)
+{
+return a+b;
+}
+
+int Sum2(int a,int b,int c)
+{
+return a+b+c;
+}
+
+public static void main(String args[])
+{
+MethodOv ob= new MethodOv();
+System.out.println(ob.Sum1(12,22));
+System.out.println(ob.Sum2(32,42,3));
+}
+}

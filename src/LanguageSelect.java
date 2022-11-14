@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LanguageSelect implements ActionListener {
+    public static int y=0;
     JFrame frame = new JFrame();
     ImageIcon bg = new ImageIcon("bgimgcs.jpeg");
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
@@ -119,15 +120,15 @@ public class LanguageSelect implements ActionListener {
         }
         if (e.getSource() == cpbutton) {
             frame.dispose();
-            DifficultySelect ds= new DifficultySelect();
+            DifficultySelect2 dsc= new DifficultySelect2();
         }
         if (e.getSource() == jabutton) {
             frame.dispose();
-            DifficultySelect ds= new DifficultySelect();
+            DifficultySelect3 dsj= new DifficultySelect3();
         }
         if (e.getSource() == ebutton) {
             frame.dispose();
-            DifficultySelect ds= new DifficultySelect();
+            DifficultySelect4 dse= new DifficultySelect4();
         }
     }
 

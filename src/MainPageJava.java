@@ -2,15 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
+import java.io.IOException;
 
-public class MainPage implements ActionListener {
 
+public class MainPageJava implements ActionListener {
 
     JFrame frame = new JFrame();
     JLayeredPane layer = new JLayeredPane();
@@ -64,7 +64,7 @@ public class MainPage implements ActionListener {
             timelabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         }
     });
-    MainPage(){
+    MainPageJava(){
 
         //frame.dispose(LanguageSelect);
         //bg img
@@ -153,43 +153,40 @@ public class MainPage implements ActionListener {
         //random integer generation
         int x;
 
+
         try{
             String a = "";
 
-
-                //C codes
-                x =random.nextInt(5);
+                //Java codes
+                x =random.nextInt(3);
                 switch(x)
                 {
                     case 0:{
-                        a="code.txt";
+                        a="metover.txt";
                         break;}
 
                     case 1:{
-                        a="fib1.txt";
+                        a="pyramid.txt";
                         break;
                     }
 
-                    case 2:{
-                        a="fact2.txt";
+                    case 2: {
+                        a="userinp.txt";
                         break;
                     }
 
-                    case 3:{
-                        a="matrix multi.txt";
+                    case 3: {
+                        a="MethodO.txt";
                         break;
                     }
 
-                    case 4:{
-                        a="palindrome.txt";
+                    case 4: {
+                        a="ConstructorOv.txt";
                         break;
                     }
 
 
                 }
-
-
-
 
 
 
@@ -271,7 +268,7 @@ public class MainPage implements ActionListener {
         }
         if (e.getSource() == bbutton) {
             frame.dispose();
-            DifficultySelect d= new DifficultySelect();
+            DifficultySelect3 d= new DifficultySelect3();
         }
         if(e.getSource()==stbutton) {
             timer.start();

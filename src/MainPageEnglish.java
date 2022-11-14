@@ -2,15 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
+import java.io.IOException;
 
-public class MainPage implements ActionListener {
 
+public class MainPageEnglish implements ActionListener {
 
     JFrame frame = new JFrame();
     JLayeredPane layer = new JLayeredPane();
@@ -64,7 +64,7 @@ public class MainPage implements ActionListener {
             timelabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         }
     });
-    MainPage(){
+    MainPageEnglish(){
 
         //frame.dispose(LanguageSelect);
         //bg img
@@ -153,44 +153,36 @@ public class MainPage implements ActionListener {
         //random integer generation
         int x;
 
+
         try{
             String a = "";
 
 
-                //C codes
+                //eng texts
                 x =random.nextInt(5);
                 switch(x)
                 {
                     case 0:{
-                        a="code.txt";
+                        a="eng code.txt";
                         break;}
 
                     case 1:{
-                        a="fib1.txt";
+                        a="eng2.txt";
                         break;
                     }
-
                     case 2:{
-                        a="fact2.txt";
+                        a="eng4.txt";
                         break;
                     }
-
                     case 3:{
-                        a="matrix multi.txt";
+                        a="eng3.txt";
                         break;
                     }
-
                     case 4:{
-                        a="palindrome.txt";
+                        a="eng5.txt";
                         break;
                     }
-
-
                 }
-
-
-
-
 
 
             BufferedReader reader = new BufferedReader(new FileReader(a));
@@ -271,7 +263,7 @@ public class MainPage implements ActionListener {
         }
         if (e.getSource() == bbutton) {
             frame.dispose();
-            DifficultySelect d= new DifficultySelect();
+            DifficultySelect4 d= new DifficultySelect4();
         }
         if(e.getSource()==stbutton) {
             timer.start();

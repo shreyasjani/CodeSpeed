@@ -4,6 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class StatsPage implements ActionListener {
+    //int score =new MainPage().score;
+    //int elapsedtime = new MainPage().elapsedtime;
+    //String seconds_string =new MainPage().seconds_string;
+    //String minutes_string =new MainPage().minutes_string;
+    //String hours_string = new MainPage().hours_string;
     JFrame frame = new JFrame();
     JLayeredPane layer = new JLayeredPane();
     ImageIcon image = new ImageIcon("CS_logo.jpeg");
@@ -27,6 +32,10 @@ public class StatsPage implements ActionListener {
     JLabel ct = new JLabel(cut);
     JLabel label = new JLabel("Progress");
     JLabel gr = new JLabel("Graph");
+    JLabel bsc = new JLabel("672");
+    JLabel bst = new JLabel("00:00:49");
+    JLabel csc = new JLabel();
+    JLabel cst = new JLabel();
 
     StatsPage(){
         //bg img
@@ -110,7 +119,42 @@ public class StatsPage implements ActionListener {
         layer.add(pr, JLayeredPane.DRAG_LAYER);
         //layer.add(ds, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
-        // Graph
+        //Results
+        //Best Score
+        bsc.setBounds(700,240,300,100);
+        bsc.setOpaque(true);
+        bsc.setFont(new Font(null,Font.PLAIN,24));
+        bsc.setBackground(Color.BLACK);
+        bsc.setForeground(Color.WHITE);
+        bsc.setHorizontalAlignment(JLabel.CENTER);
+        bglabel.add(bsc);
+        //Current Score
+        csc.setBounds(700,360,300,100);
+        csc.setOpaque(true);
+        csc.setFont(new Font(null,Font.PLAIN,24));
+        csc.setBackground(Color.BLACK);
+        csc.setForeground(Color.WHITE);
+        csc.setHorizontalAlignment(JLabel.CENTER);
+        //csc.setText("hi");
+        bglabel.add(csc);
+        //Best Time
+        bst.setBounds(700,480,300,100);
+        bst.setOpaque(true);
+        bst.setFont(new Font(null,Font.PLAIN,24));
+        bst.setBackground(Color.BLACK);
+        bst.setForeground(Color.WHITE);
+        bst.setHorizontalAlignment(JLabel.CENTER);
+        bglabel.add(bst);
+        //Current Time
+        cst.setBounds(700,600,300,100);
+        cst.setOpaque(true);
+        cst.setFont(new Font(null,Font.PLAIN,24));
+        //cst.setText(hours_string+":"+minutes_string+":"+seconds_string);
+        cst.setBackground(Color.BLACK);
+        cst.setForeground(Color.WHITE);
+        cst.setHorizontalAlignment(JLabel.CENTER);
+        bglabel.add(cst);
+
     }
     @Override
     public void actionPerformed(ActionEvent e){
