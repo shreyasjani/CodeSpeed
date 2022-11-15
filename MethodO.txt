@@ -1,23 +1,19 @@
 public class MethodOv
 {
 int i;
-public static String Work= &quot;employee&quot;;
-
+public static String Work= &quot;employee&quot;
 static void Hi()
 {
 System.out.println(&quot;Hello&quot;);
 }
-
 int Sum1(int a, int b)
 {
 return a+b;
 }
-
 int Sum2(int a,int b,int c)
 {
 return a+b+c;
 }
-
 public static void main(String args[])
 {
 MethodOv ob= new MethodOv();
