@@ -23,7 +23,7 @@ public class MainPage implements ActionListener {
     JButton stbutton = new JButton("Start");
     JLabel timelabel = new JLabel();
     JButton button = new JButton("Finish");
-    ImageIcon start = new ImageIcon("start.png");
+    ImageIcon start = new ImageIcon("score.png");
     ImageIcon finish = new ImageIcon("finish.png");
     JLabel st = new JLabel(start);
     JLabel fn = new JLabel(finish);
@@ -33,6 +33,7 @@ public class MainPage implements ActionListener {
     JTextArea textArea2 = new JTextArea();
     JButton bbutton = new JButton("<--");
     JScrollPane sp = new JScrollPane(textArea);
+//    JScrollPane sp2 = new JScrollPane(textArea2);
     //Object for random no. generation
     Random random = new Random();
 
@@ -44,9 +45,9 @@ public class MainPage implements ActionListener {
 
     //Timer code
     public int elapsedtime=0;
-    int seconds=0;
-    int minutes=0;
-    int hours=0;
+    public int seconds=0;
+    public int minutes=0;
+    public int hours=0;
     boolean started =false;
     String seconds_string = String.format("%02d",seconds);
     String minutes_string = String.format("%02d",minutes);
@@ -107,11 +108,11 @@ public class MainPage implements ActionListener {
         timelabel.setFont(new Font("Verdana",Font.PLAIN,35));
         timelabel.setBorder(BorderFactory.createBevelBorder(1));
         bglabel.add(timelabel);
-        stbutton.setBounds(1000,650,200,100);
-        stbutton.setFocusable(false);
-        stbutton.addActionListener(this);
+//        stbutton.setBounds(1000,650,200,100);
+//        stbutton.setFocusable(false);
+//        stbutton.addActionListener(this);
         st.setOpaque(true);
-        st.setBounds(1000,650,200,100);
+        st.setBounds(750,650,200,100);
         bglabel.add(stbutton);
         //TextArea
         //bglabel.add(textArea);
@@ -123,12 +124,18 @@ public class MainPage implements ActionListener {
         textArea.setForeground(Color.white);
         textArea.setCaretColor(Color.white);
         textArea.addKeyListener(keyListener);
+        textArea.setMargin(new Insets(10,10,10,10));
         //textArea.setLineWrap(true);
         //textArea.setWrapStyleWord(true);
         bglabel.add(sp);
         sp.setBounds(790,120,700,500);
         sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         sp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+//        bglabel.add(sp2);
+//        sp2.setBounds(50,80,650,650);
+//        sp2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+//        sp2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         //textArea.setText(textArea.getText()+ string);
         //TextField
 //        bglabel.add(textField2);
@@ -142,8 +149,9 @@ public class MainPage implements ActionListener {
         textArea2.setAlignmentY(0.0f);
         textArea2.setLineWrap(true);
         textArea2.setWrapStyleWord(true);
+        textArea2.setMargin(new Insets(10,10,10,10));
         //Score Label
-        scoreLabel.setBounds(750,650,200,100);
+        scoreLabel.setBounds(1000,650,200,100);
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBackground(Color.BLACK);
         scoreLabel.setOpaque(true);
@@ -266,6 +274,21 @@ public class MainPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==button) {
+          String yourChoice = e.getActionCommand();
+
+            try{
+
+                BufferedWriter bw = new BufferedWriter(new FileWriter("saveFile.txt",true));
+
+                bw.append(""+score);
+                bw.newLine();
+                bw.append(""+elapsedtime);
+                bw.newLine();
+
+                bw.close();
+            }
+            catch(Exception err){}
+
             frame.dispose();
             StatsPage st= new StatsPage();
         }

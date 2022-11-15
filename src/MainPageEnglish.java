@@ -23,7 +23,7 @@ public class MainPageEnglish implements ActionListener {
     JButton stbutton = new JButton("Start");
     JLabel timelabel = new JLabel();
     JButton button = new JButton("Finish");
-    ImageIcon start = new ImageIcon("start.png");
+    ImageIcon start = new ImageIcon("score.png");
     ImageIcon finish = new ImageIcon("finish.png");
     JLabel st = new JLabel(start);
     JLabel fn = new JLabel(finish);
@@ -111,7 +111,7 @@ public class MainPageEnglish implements ActionListener {
         stbutton.setFocusable(false);
         stbutton.addActionListener(this);
         st.setOpaque(true);
-        st.setBounds(1000,650,200,100);
+        st.setBounds(750,650,200,100);
         bglabel.add(stbutton);
         //TextArea
         //bglabel.add(textArea);
@@ -123,6 +123,7 @@ public class MainPageEnglish implements ActionListener {
         textArea.setForeground(Color.white);
         textArea.setCaretColor(Color.white);
         textArea.addKeyListener(keyListener);
+        textArea.setMargin(new Insets(10,10,10,10));
         //textArea.setLineWrap(true);
         //textArea.setWrapStyleWord(true);
         bglabel.add(sp);
@@ -142,8 +143,9 @@ public class MainPageEnglish implements ActionListener {
         textArea2.setAlignmentY(0.0f);
         textArea2.setLineWrap(true);
         textArea2.setWrapStyleWord(true);
+        textArea2.setMargin(new Insets(10,10,10,10));
         //Score Label
-        scoreLabel.setBounds(750,650,200,100);
+        scoreLabel.setBounds(1000,650,200,100);
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBackground(Color.BLACK);
         scoreLabel.setOpaque(true);

@@ -34,8 +34,11 @@ public class StatsPage implements ActionListener {
     JLabel gr = new JLabel("Graph");
     JLabel bsc = new JLabel("672");
     JLabel bst = new JLabel("00:00:49");
-    JLabel csc = new JLabel();
-    JLabel cst = new JLabel();
+    JLabel csc = new JLabel(String.valueOf(cscore));
+    JLabel cst = new JLabel(hours_string+":"+minutes_string+":"+seconds_string);
+
+
+
 
     StatsPage(){
         //bg img
@@ -51,6 +54,42 @@ public class StatsPage implements ActionListener {
         frame.getContentPane().setBackground(Color.BLACK);
         frame.setVisible(true);
         frame.setIconImage(image.getImage());
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                loadData();
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
+            }
+        });
         //Finish
         bglabel.add(button);
         button.setVisible(true);
@@ -61,14 +100,14 @@ public class StatsPage implements ActionListener {
         mm.setBounds(1300,680,200,100);
         mm.setOpaque(true);
         //Back
-        bglabel.add(bbutton);
-        bbutton.setVisible(true);
-        bbutton.setFocusable(false);
-        bbutton.setBounds(100,680,200,100);
-        bbutton.addActionListener(this);
-        bbutton.setBackground(Color.GREEN);
-        pa.setOpaque(true);
-        pa.setBounds(100,680,200,100);
+//        bglabel.add(bbutton);
+//        bbutton.setVisible(true);
+//        bbutton.setFocusable(false);
+//        bbutton.setBounds(100,680,200,100);
+//        bbutton.addActionListener(this);
+//        bbutton.setBackground(Color.GREEN);
+//        pa.setOpaque(true);
+//        pa.setBounds(100,680,200,100);
         //Title
         pr.setBounds(500,30,600,100);
         pr.setOpaque(true);
@@ -115,7 +154,7 @@ public class StatsPage implements ActionListener {
         layer.setBounds(0,0,1600,900);
         layer.add(bglabel, JLayeredPane.DEFAULT_LAYER);
         layer.add(mm, JLayeredPane.DRAG_LAYER);
-        layer.add(pa, JLayeredPane.DRAG_LAYER);
+        //layer.add(pa, JLayeredPane.DRAG_LAYER);
         layer.add(pr, JLayeredPane.DRAG_LAYER);
         //layer.add(ds, JLayeredPane.DRAG_LAYER);
         frame.add(layer);
