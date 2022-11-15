@@ -273,7 +273,7 @@ public class StatsPage implements ActionListener {
         cst.setBounds(700,600,300,100);
         cst.setOpaque(true);
         cst.setFont(new Font(null,Font.PLAIN,24));
-        //cst.setText(hours_string+":"+minutes_string+":"+seconds_string);
+        cst.setText(hours_string+":"+minutes_string+":"+seconds_string);
         cst.setBackground(Color.BLACK);
         cst.setForeground(Color.WHITE);
         cst.setHorizontalAlignment(JLabel.CENTER);

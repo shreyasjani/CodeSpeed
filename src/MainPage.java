@@ -240,9 +240,7 @@ public class MainPage implements ActionListener {
         @Override
         public void keyTyped(KeyEvent e) {
             timer.start();
-            System.out.println(e.getKeyChar());
             if(e.getKeyChar() == KeyEvent.VK_BACK_SPACE && counter > 0){
-                System.out.println("Backspace");
                 counter--;
             }else{
                 if(textArea2.getText().charAt(counter) == e.getKeyChar()){
@@ -252,11 +250,21 @@ public class MainPage implements ActionListener {
                         score--;
                     }
                 }
-                scoreLabel.setText(textArea2.getText().charAt(counter)+ " : "+ e.getKeyChar() + " : " + score);
+
+
+                scoreLabel.setText(score +" ("+ textArea2.getText().charAt(counter)+ " | "+ e.getKeyChar() + ") " );
                 //System.out.println(e.getKeyChar());
-                counter++;
+                //counter++;
+                if(e.getKeyChar() != KeyEvent.VK_ENTER){
+                    counter++;
+                }else{
+                    counter+=2;
+                    score++;
+                }
+                }
             }
-        }
+
+
 
         @Override
         public void keyPressed(KeyEvent e) {
