@@ -4,10 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Random;
-import java.io.IOException;
 
 
 public class MainPageEnglish implements ActionListener {
@@ -226,9 +224,7 @@ public class MainPageEnglish implements ActionListener {
         @Override
         public void keyTyped(KeyEvent e) {
             timer.start();
-            System.out.println(e.getKeyChar());
             if(e.getKeyChar() == KeyEvent.VK_BACK_SPACE && counter > 0){
-                System.out.println("Backspace");
                 counter--;
             }else{
                 if(textArea2.getText().charAt(counter) == e.getKeyChar()){
@@ -238,9 +234,17 @@ public class MainPageEnglish implements ActionListener {
                         score--;
                     }
                 }
-                scoreLabel.setText(textArea2.getText().charAt(counter)+ " : "+ e.getKeyChar() + " : " + score);
+
+
+                scoreLabel.setText(score +" ("+ textArea2.getText().charAt(counter)+ " | "+ e.getKeyChar() + ") " );
                 //System.out.println(e.getKeyChar());
-                counter++;
+                //counter++;
+                if(e.getKeyChar() != KeyEvent.VK_ENTER){
+                    counter++;
+                }else{
+                    counter+=2;
+                    score++;
+                }
             }
         }
 
@@ -260,9 +264,25 @@ public class MainPageEnglish implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==button) {
+            String yourChoice = e.getActionCommand();
+
+            try{
+
+                BufferedWriter bw = new BufferedWriter(new FileWriter("saveFile.txt",true));
+
+                bw.append(""+score);
+                bw.newLine();
+                bw.append(""+elapsedtime);
+                bw.newLine();
+
+                bw.close();
+            }
+            catch(Exception err){}
+
             frame.dispose();
             StatsPage st= new StatsPage();
         }
+
         if (e.getSource() == bbutton) {
             frame.dispose();
             DifficultySelect4 d= new DifficultySelect4();

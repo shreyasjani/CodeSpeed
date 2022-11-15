@@ -2,8 +2,93 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.*;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
+
 
 public class StatsPage implements ActionListener {
+
+    String score="";
+    public int time=0;
+    int ctime=0;
+    String cscore="";
+    int hours;
+    int minutes;
+    int seconds;
+    int bhours;
+    int bminutes;
+    int bseconds;
+    String seconds_string = String.format("%02d",seconds);
+    String minutes_string = String.format("%02d",minutes);
+    String hours_string = String.format("%02d",hours);
+    String bseconds_string = String.format("%02d",bseconds);
+    String bminutes_string = String.format("%02d",bminutes);
+    String bhours_string = String.format("%02d",bhours);
+    int maximum = 0;
+    int min = 0;
+
+    public void loadData(){
+        System.out.println("TEST");
+        int ctime=0;
+        String cscore="";
+        try{
+
+
+            BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
+            int i=1;
+            List<String> score = new ArrayList<String>();
+            List<Integer> time = new ArrayList<Integer>();
+            while(br.ready())
+            {
+                if(i%2!=0)
+                {
+                    score.add(br.readLine());
+                }
+                else{
+                    time.add(Integer.parseInt(br.readLine()));
+                }
+                i++;
+            }
+//            score = br.readLine();
+//            time = Integer.parseInt(br.readLine());//br.readline() for string
+
+            ctime=time.get(time.size()-1);
+            cscore=score.get(score.size()-1);
+
+            maximum = Integer.parseInt(score.get(0));
+            for (int x = 1; x < score.size(); x++) {
+                if (maximum < Integer.parseInt(score.get(x))){
+                    maximum = Integer.parseInt(score.get(x));
+                    min = time.get(x);
+                }
+            }
+
+            br.close();
+        }
+        catch(Exception e){System.out.println("Catch");}
+        int hours=(ctime/3600000);
+        int minutes=(ctime/60000)%60;
+        int seconds=(ctime/1000)%60;
+        int bhours=(min/3600000);
+        int bminutes=(min/60000)%60;
+        int bseconds=(min/1000)%60;
+        seconds_string = String.format("%02d",seconds);
+        minutes_string = String.format("%02d",minutes);
+        hours_string = String.format("%02d",hours);
+        bseconds_string = String.format("%02d",bseconds);
+        bminutes_string = String.format("%02d",bminutes);
+        bhours_string = String.format("%02d",bhours);
+        csc.setText(""+cscore);
+        bsc.setText(""+maximum);
+        cst.setText(""+hours_string+":"+minutes_string+":"+seconds_string);
+        bst.setText(""+bhours_string+":"+bminutes_string+":"+bseconds_string);
+
+    }
     //int score =new MainPage().score;
     //int elapsedtime = new MainPage().elapsedtime;
     //String seconds_string =new MainPage().seconds_string;
@@ -193,6 +278,11 @@ public class StatsPage implements ActionListener {
         cst.setForeground(Color.WHITE);
         cst.setHorizontalAlignment(JLabel.CENTER);
         bglabel.add(cst);
+
+        //saving loadin
+
+
+
 
     }
     @Override

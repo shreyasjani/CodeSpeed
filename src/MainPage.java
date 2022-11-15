@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Random;
 
 public class MainPage implements ActionListener {
@@ -88,8 +86,10 @@ public class MainPage implements ActionListener {
         button.setBounds(1300,650,200,100);
         button.addActionListener(this);
         button.setBackground(Color.GREEN);
+        button.setActionCommand("finish");
         fn.setBounds(1300,650,200,100);
         fn.setOpaque(true);
+
         //Back
         bglabel.add(bbutton);
         bbutton.setVisible(true);
@@ -292,6 +292,7 @@ public class MainPage implements ActionListener {
             frame.dispose();
             StatsPage st= new StatsPage();
         }
+
         if (e.getSource() == bbutton) {
             frame.dispose();
             DifficultySelect d= new DifficultySelect();
